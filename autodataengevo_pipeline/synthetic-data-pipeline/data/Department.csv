@@ -1,0 +1,17 @@
+DepartmentID,Name,GroupName,ModifiedDate
+1,Engineering,Research and Development,00:00.0
+2,Tool Design,Research and Development,00:00.0
+3,Sales,Sales and Marketing,00:00.0
+4,Marketing,Sales and Marketing,00:00.0
+5,Purchasing,Inventory Management,00:00.0
+6,Research and Development,Research and Development,00:00.0
+7,Production,Manufacturing,00:00.0
+8,Production Control,Manufacturing,00:00.0
+9,Human Resources,Executive General and Administration,00:00.0
+10,Finance,Executive General and Administration,00:00.0
+11,Information Services,Executive General and Administration,00:00.0
+12,Document Control,Quality Assurance,00:00.0
+13,Quality Assurance,Quality Assurance,00:00.0
+14,Facilities and Maintenance,Executive General and Administration,00:00.0
+15,Shipping and Receiving,Inventory Management,00:00.0
+16,Executive,Executive General and Administration,00:00.0

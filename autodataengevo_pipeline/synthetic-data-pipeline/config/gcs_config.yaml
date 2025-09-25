@@ -1,0 +1,8 @@
+bucket_name: raw_data_autodataengevo
+input_files:
+  - data/Department.csv
+  - data/Employee.csv
+  - data/EmployeeDepartmentHistory.csv
+  - data/EmployeePayHistory.csv
+synthetic_output_prefix: synthetic-data/
+credentials_path: C:/Users/devas/ServiceAccountJsonKeys/autodataengevo-sa.json
