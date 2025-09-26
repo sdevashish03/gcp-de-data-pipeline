@@ -3,3 +3,4 @@ numpy
 pyyaml
 google-cloud-storage
 apache-airflow
+apache-beam
