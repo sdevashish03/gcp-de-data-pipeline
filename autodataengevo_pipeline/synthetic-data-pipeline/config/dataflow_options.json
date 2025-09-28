@@ -1,0 +1,8 @@
+{
+  "runner": "DataflowRunner",
+  "temp_location": "gs://raw-data-temp-autodataengevo/temp",
+  "staging_location": "gs://raw-data-staging-autodataengevo/staging",
+  "project": "autodataengevo",
+  "region": "us-central1",
+  "service_account_email": "dataflow-runner-autodataengevo@autodataengevo.iam.gserviceaccount.com"
+}

@@ -1,0 +1,41 @@
+{
+  "Department_raw": [
+    { "name": "DepartmentID", "type": "STRING", "mode": "REQUIRED" },
+    { "name": "Name", "type": "STRING", "mode": "REQUIRED" },
+    { "name": "GroupName", "type": "STRING", "mode": "REQUIRED" },
+    { "name": "ModifiedDate", "type": "STRING", "mode": "NULLABLE" }
+  ],
+  "EmployeeDepartmentHistory_raw": [
+    { "name": "BusinessEntityID", "type": "STRING", "mode": "REQUIRED" },
+    { "name": "DepartmentID", "type": "STRING", "mode": "REQUIRED" },
+    { "name": "ShiftID", "type": "STRING", "mode": "REQUIRED" },
+    { "name": "StartDate", "type": "STRING", "mode": "REQUIRED" },
+    { "name": "EndDate", "type": "STRING", "mode": "NULLABLE" },
+    { "name": "ModifiedDate", "type": "STRING", "mode": "NULLABLE" }
+  ],
+  "EmployeePayHistory_raw": [
+    { "name": "BusinessEntityID", "type": "STRING", "mode": "REQUIRED" },
+    { "name": "RateChangeDate", "type": "STRING", "mode": "NULLABLE" },
+    { "name": "Rate", "type": "STRING", "mode": "REQUIRED" },
+    { "name": "PayFrequency", "type": "STRING", "mode": "REQUIRED" },
+    { "name": "ModifiedDate", "type": "STRING", "mode": "NULLABLE" }
+  ],
+  "Employee_raw": [
+    { "name": "BusinessEntityID", "type": "STRING", "mode": "REQUIRED" },
+    { "name": "NationalIDNumber", "type": "STRING", "mode": "REQUIRED" },
+    { "name": "LoginID", "type": "STRING", "mode": "REQUIRED" },
+    { "name": "OrganizationNode", "type": "STRING", "mode": "NULLABLE" },
+    { "name": "OrganizationLevel", "type": "STRING", "mode": "NULLABLE" },
+    { "name": "JobTitle", "type": "STRING", "mode": "REQUIRED" },
+    { "name": "BirthDate", "type": "STRING", "mode": "REQUIRED" },
+    { "name": "MaritalStatus", "type": "STRING", "mode": "REQUIRED" },
+    { "name": "Gender", "type": "STRING", "mode": "REQUIRED" },
+    { "name": "HireDate", "type": "STRING", "mode": "REQUIRED" },
+    { "name": "SalariedFlag", "type": "STRING", "mode": "REQUIRED" },
+    { "name": "VacationHours", "type": "STRING", "mode": "REQUIRED" },
+    { "name": "SickLeaveHours", "type": "STRING", "mode": "REQUIRED" },
+    { "name": "CurrentFlag", "type": "STRING", "mode": "REQUIRED" },
+    { "name": "rowguid", "type": "STRING", "mode": "REQUIRED" },
+    { "name": "ModifiedDate", "type": "STRING", "mode": "NULLABLE" }
+  ]
+}

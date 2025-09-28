@@ -1,0 +1,24 @@
+{
+  "project_id": "autodataengevo",
+  "dataset_id": "Employee_Details_raw",
+  "service_account_email": "dataflow-runner@autodataengevo.iam.gserviceaccount.com",
+  
+  "tables": [
+    {
+      "name": "Department_raw",
+      "source_path": "gs://raw_data_autodataengevo/synthetic-data/Department.csv"
+    },
+    {
+      "name": "EmployeeDepartmentHistory_raw",
+      "source_path": "gs://raw_data_autodataengevo/synthetic-data/EmployeeDepartmentHistory.csv"
+    },
+    {
+      "name": "EmployeePayHistory_raw",
+      "source_path": "gs://raw_data_autodataengevo/synthetic-data/EmployeePayHistory.csv"
+    },
+    {
+      "name": "Employee_raw",
+      "source_path": "gs://raw_data_autodataengevo/synthetic-data/Employee.csv"
+    }
+  ]
+}

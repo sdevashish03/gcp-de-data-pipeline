@@ -1,0 +1,5 @@
+##To Run the Pipeline
+Command:
+    python pipeline.py --project_id=autodataengevo --dataset_id=Employee_Details_raw --table_name=Employee_raw --input_path=gs://raw_data_autodataengevo/synthetic-data/Employee.csv
+
+

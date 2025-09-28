@@ -1,8 +1,22 @@
-bucket_name: raw_data_autodataengevo
-input_files:
-  - data/Department.csv
-  - data/Employee.csv
-  - data/EmployeeDepartmentHistory.csv
-  - data/EmployeePayHistory.csv
-synthetic_output_prefix: synthetic-data/
-credentials_path: C:/Users/devas/ServiceAccountJsonKeys/autodataengevo-sa.json
+project_id: autodataengevo
+dataset_id: Employee_Details_raw
+temp_location: gs://raw-data-temp-autodataengevo/temp
+staging_location: gs://raw-data-staging-autodataengevo/staging
+service_account_email: dataflow-runner-autodataengevo@autodataengevo.iam.gserviceaccount.com
+
+tables:
+  - name: Department_raw
+    source_path: gs://raw_data_autodataengevo/synthetic-data/Department.csv
+    headers: ["DepartmentID", "Name", "GroupName", "ModifiedDate"]
+
+  - name: EmployeeDepartmentHistory_raw
+    source_path: gs://raw_data_autodataengevo/synthetic-data/EmployeeDepartmentHistory.csv
+    headers: ["BusinessEntityID", "NationalIDNumber", "LoginID", "OrganizationNode", "OrganizationLevel", "JobTitle", "BirthDate", "MaritalStatus", "Gender", "HireDate", "SalariedFlag", "VacationHours", "SickLeaveHours", "CurrentFlag", "rowguid", "ModifiedDate"]
+
+  - name: EmployeePayHistory_raw
+    source_path: gs://raw_data_autodataengevo/synthetic-data/EmployeePayHistory.csv
+    headers: ["BusinessEntityID", "DepartmentID", "ShiftID", "StartDate", "EndDate", "ModifiedDate"]
+
+  - name: Employee_raw
+    source_path: gs://raw_data_autodataengevo/synthetic-data/Employee.csv
+    headers: ["BusinessEntityID", "RateChangeDate", "Rate", "PayFrequency", "ModifiedDate"]
