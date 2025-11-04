@@ -1,3 +1,11 @@
+--Switch the service account and the project
+--1. gcloud auth list
+--2. gcloud config list
+--3. --Change Active project
+    --gcloud config set project [YOUR_PROJECT_ID] (--gcp-de-batch-sim-464816-476514)
+--
+
+
 --To create a docker image
 --Step 1
 1st file
