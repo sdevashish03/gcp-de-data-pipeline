@@ -1,3 +1,16 @@
+Final Fix: Unset the Environment Variable
+To ensure your pipeline uses the correct credentials (application_default_credentials.json), run this in PowerShell:
+
+---Remove-Item Env:GOOGLE_APPLICATION_CREDENTIALS
+
+Or in CMD:
+---set GOOGLE_APPLICATION_CREDENTIALS=
+
+
+This will remove the override and let Beam use the default credentials you just configured via gcloud auth application-default login.
+
+
+
 --Switch the service account and the project
 --1. gcloud auth list
 --2. gcloud config list
