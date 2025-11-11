@@ -24,22 +24,22 @@ def run():
     # Define pipeline options for Dataflow
     pipeline_options = PipelineOptions(
         runner="DataflowRunner",  # Run on Google Cloud Dataflow
-        project="gcp-de-batch-sim-464816-476514",  # Your actual GCP project ID
-        temp_location="gs://gcp-de-batch-data-4/temp",  # Temp bucket for staging
-        staging_location="gs://gcp-de-batch-data-4/staging",  # Staging bucket
+        project="gcp-de-batch-sim-5",  # Your actual GCP project ID
+        temp_location="gs://gcp-de-batch-data-5/temp",  # Temp bucket for staging
+        staging_location="gs://gcp-de-batch-data-5/staging",  # Staging bucket
         region="us-east1",  # Dataflow region
         job_name="department-csv-ingestion"  # Unique job name
     )
 
     # Explicitly set the service account to run the Dataflow job
     google_cloud_options = pipeline_options.view_as(GoogleCloudOptions)
-    google_cloud_options.service_account_email = "batch-sim@gcp-de-batch-sim-464816-476514.iam.gserviceaccount.com"
+    google_cloud_options.service_account_email = "gcp-de-batch-sim-5-sa@gcp-de-batch-sim-5.iam.gserviceaccount.com"
 
     # Disable streaming mode (this is a batch job)
     pipeline_options.view_as(StandardOptions).streaming = False
 
     # GCS path to the input CSV file
-    gcs_file_path = "gs://gcp-de-batch-data-4/Department.csv"
+    gcs_file_path = "gs://gcp-de-batch-data-5/Department.csv"
 
     # Capture ingestion timestamp in ISO format (for TIMESTAMP field)
     ingestion_time = datetime.datetime.utcnow().isoformat()
@@ -59,7 +59,7 @@ def run():
 
             # Write enriched records to BigQuery
             | "Write to BigQuery" >> beam.io.WriteToBigQuery(
-                table="gcp-de-batch-sim-464816-476514.Employee_Details_raw.Department_raw",  # Full table path
+                table="gcp-de-batch-sim-5.Employee_Details_raw.Department_raw",  # Full table path
                 schema={
                     'fields': [
                         {'name': 'DepartmentID', 'type': 'STRING', 'mode': 'REQUIRED'},

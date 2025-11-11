@@ -33,22 +33,22 @@ def run():
     # Define pipeline options for Dataflow execution
     pipeline_options = PipelineOptions(
         runner="DataflowRunner",  # Use Google Cloud Dataflow
-        project="gcp-de-batch-sim-464816-476514",  # Your GCP project ID
-        temp_location="gs://gcp-de-batch-data-4/temp",  # Temp bucket for staging files
-        staging_location="gs://gcp-de-batch-data-4/staging",  # Staging bucket for pipeline artifacts
+        project="gcp-de-batch-sim-5",  # Your GCP project ID
+        temp_location="gs://gcp-de-batch-data-5/temp",  # Temp bucket for staging files
+        staging_location="gs://gcp-de-batch-data-5/staging",  # Staging bucket for pipeline artifacts
         region="us-east1",  # Regional endpoint for Dataflow
         job_name="employee-csv-ingestion"  # Unique job name
     )
 
     # Set the service account for the Dataflow job
     google_cloud_options = pipeline_options.view_as(GoogleCloudOptions)
-    google_cloud_options.service_account_email = "batch-sim@gcp-de-batch-sim-464816-476514.iam.gserviceaccount.com"
+    google_cloud_options.service_account_email = "gcp-de-batch-sim-5-sa@gcp-de-batch-sim-5.iam.gserviceaccount.com"
 
     # Set pipeline to batch mode
     pipeline_options.view_as(StandardOptions).streaming = False
 
     # Define input file path and metadata
-    gcs_file_path = "gs://gcp-de-batch-data-4/Employee.csv"  # GCS path to input CSV
+    gcs_file_path = "gs://gcp-de-batch-data-5/Employee.csv"  # GCS path to input CSV
     ingestion_time = datetime.datetime.utcnow().isoformat()  # Current UTC timestamp
     load_date = datetime.datetime.utcnow().date().isoformat()  # Current date in YYYY-MM-DD format
 
@@ -64,7 +64,7 @@ def run():
 
             # Write enriched records to BigQuery
             | "Write to BigQuery" >> beam.io.WriteToBigQuery(
-                table="gcp-de-batch-sim-464816-476514.Employee_Details_raw.Employee_raw",  # Full table path
+                table="gcp-de-batch-sim-5.Employee_Details_raw.Employee_raw",  # Full table path
                 schema={
                     'fields': [
                         {'name': 'BusinessEntityID', 'type': 'STRING', 'mode': 'REQUIRED'},

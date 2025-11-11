@@ -1,0 +1,20 @@
+{
+  "name": "department-pipeline",
+  "description": "Flex Template for Department Pipeline",
+  "parameters": [
+    {
+      "name": "input",
+      "label": "Input Path",
+      "helpText": "GCS path to input data",
+      "paramType": "TEXT",
+      "isOptional": false
+    },
+    {
+      "name": "output",
+      "label": "Output Path",
+      "helpText": "GCS path to write output",
+      "paramType": "TEXT",
+      "isOptional": false
+    }
+  ]
+}

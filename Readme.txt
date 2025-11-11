@@ -1,3 +1,8 @@
+--To activate service account
+
+gcloud auth activate-service-account gcp-de-batch-sim-5-sa@gcp-de-batch-sim-5.iam.gserviceaccount.com --key-file="D:/Learning/GCP Data Engineer/PDE Projects/json_key/gcp-de-batch-sim/gcp-de-batch-sim-5-456c9bf832ac.json"
+
+
 Final Fix: Unset the Environment Variable
 To ensure your pipeline uses the correct credentials (application_default_credentials.json), run this in PowerShell:
 

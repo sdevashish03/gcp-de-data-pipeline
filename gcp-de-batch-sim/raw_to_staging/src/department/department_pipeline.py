@@ -11,9 +11,9 @@ from datetime import datetime
 # Explanation: Project and resource configs remain the same.
 # Updated SERVICE_ACCOUNT to a same-project account (assuming it's now in gcp-de-batch-sim-464816-476514).
 # For default Compute Engine SA (no custom bindings), comment out SERVICE_ACCOUNT usage below.
-PROJECT_ID = "gcp-de-batch-sim-464816-476514"
+PROJECT_ID = "gcp-de-batch-sim-5"
 REGION = "us-east1"
-BUCKET = "gcp-de-batch-data-4"
+BUCKET = "gcp-de-batch-data-5"
 RAW_DATASET = "Employee_Details_raw"
 STAGING_DATASET = "Employee_Details_stg"
 RAW_TABLE = "Department_raw"
@@ -23,7 +23,7 @@ INPUT_TABLE = f"{PROJECT_ID}.{RAW_DATASET}.{RAW_TABLE}"
 OUTPUT_TABLE = f"{PROJECT_ID}.{STAGING_DATASET}.{STAGING_TABLE}"
 TEMP_LOCATION = f"gs://{BUCKET}/temp"
 STAGING_LOCATION = f"gs://{BUCKET}/staging"
-SERVICE_ACCOUNT = "batch-sim@gcp-de-batch-sim-464816-476514.iam.gserviceaccount.com"  # Same-project SA; comment if using default
+SERVICE_ACCOUNT = "gcp-de-batch-sim-5-sa@gcp-de-batch-sim-5.iam.gserviceaccount.com"  # Same-project SA; comment if using default
 
 
 # 📐 BigQuery schema for staging table

@@ -10,9 +10,9 @@ from datetime import datetime
 # 🛠️ Static configuration
 # Explanation: Project and resource configs from provided code.
 # SERVICE_ACCOUNT: Added same-project SA (adjust as needed); comment usage below for default Compute Engine SA to avoid bindings.
-project = "gcp-de-batch-sim-464816-476514"
+project = "gcp-de-batch-sim-5"
 region = "us-east1"
-bucket = "gcp-de-batch-data-4"
+bucket = "gcp-de-batch-data-5"
 raw_dataset = "Employee_Details_raw"
 staging_dataset = "Employee_Details_stg"
 raw_table = "Employee_raw"
@@ -22,7 +22,7 @@ input = f"{project}.{raw_dataset}.{raw_table}"
 output = f"{project}.{staging_dataset}.{staging_table}"
 temp_location = f"gs://{bucket}/temp"
 staging_location = f"gs://{bucket}/staging"
-SERVICE_ACCOUNT = "batch-sim@gcp-de-batch-sim-464816-476514.iam.gserviceaccount.com"  # Same-project SA; comment if using default
+SERVICE_ACCOUNT = "gcp-de-batch-sim-5-sa@gcp-de-batch-sim-5.iam.gserviceaccount.com"  # Same-project SA; comment if using default
 
 
 # 📐 BigQuery schema for staging table
