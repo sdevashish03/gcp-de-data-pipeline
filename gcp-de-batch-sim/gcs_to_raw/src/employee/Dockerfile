@@ -1,3 +1,12 @@
 FROM gcr.io/dataflow-templates-base/python3-template-launcher-base
-COPY employee_pipeline.py .
-ENTRYPOINT ["python", "employee_pipeline.py"]
+
+# Install dependencies directly
+RUN pip install apache-beam[gcp]==2.53.0 \
+    google-cloud-storage \
+    google-cloud-bigquery
+
+# Copy pipeline code
+COPY . /dataflow/template/
+WORKDIR /dataflow/template
+
+ENTRYPOINT ["python", "gcs_to_raw_employee_pipeline.py"]

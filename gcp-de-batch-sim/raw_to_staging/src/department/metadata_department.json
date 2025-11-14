@@ -1,19 +1,17 @@
 {
-  "name": "department-pipeline",
-  "description": "Flex Template for Department Pipeline",
+  "name": "raw-to-stg-department",
+  "description": "Transforms department data from raw to staging layer",
   "parameters": [
     {
-      "name": "input",
-      "label": "Input Path",
-      "helpText": "GCS path to input data",
-      "paramType": "TEXT",
+      "name": "inputTable",
+      "label": "Raw BQ table",
+      "helpText": "BQ raw table to read from",
       "isOptional": false
     },
     {
-      "name": "output",
-      "label": "Output Path",
-      "helpText": "GCS path to write output",
-      "paramType": "TEXT",
+      "name": "outputTable",
+      "label": "Staging BQ table",
+      "helpText": "BQ staging table to write to",
       "isOptional": false
     }
   ]

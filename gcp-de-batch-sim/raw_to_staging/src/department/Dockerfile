@@ -1,8 +1,12 @@
-# Use Google's official Dataflow Python base image
 FROM gcr.io/dataflow-templates-base/python3-template-launcher-base
 
-# Copy your pipeline code into the container
-COPY department_pipeline.py .
+# Install dependencies directly
+RUN pip install apache-beam[gcp]==2.53.0 \
+    google-cloud-storage \
+    google-cloud-bigquery
 
-# Set the entrypoint to run your pipeline
-ENTRYPOINT ["python", "department_pipeline.py"]
+# Copy pipeline code
+COPY . /dataflow/template/
+WORKDIR /dataflow/template
+
+ENTRYPOINT ["python", "raw_to_stg_department_pipeline.py"]

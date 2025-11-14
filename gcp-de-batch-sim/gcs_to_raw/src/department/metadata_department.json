@@ -1,19 +1,17 @@
 {
-  "name": "department-pipeline",
-  "description": "Flex Template for Department Pipeline",
+  "name": "gcs-to-raw-department",
+  "description": "Loads departmrnt CSV from GCS to BigQuery raw layer",
   "parameters": [
     {
-      "name": "input",
-      "label": "Input Path",
-      "helpText": "GCS path to input data",
-      "paramType": "TEXT",
+      "name": "inputFile",
+      "label": "Input CSV file",
+      "helpText": "GCS path to employee CSV",
       "isOptional": false
     },
     {
-      "name": "output",
-      "label": "Output Path",
-      "helpText": "GCS path to write output",
-      "paramType": "TEXT",
+      "name": "outputTable",
+      "label": "BigQuery output table",
+      "helpText": "BQ table to write to",
       "isOptional": false
     }
   ]

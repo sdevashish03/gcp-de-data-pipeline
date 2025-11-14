@@ -25,6 +25,9 @@ This will remove the override and let Beam use the default credentials you just 
 
 
 --To create a docker image
+cd gcs_to_raw/src/employee/
+# Authenticate Docker
+gcloud auth configure-docker
 --Step 1
 1st file
 gcloud builds submit --tag gcr.io/gcp-de-batch-sim-464816-476514/department_pipeline .
@@ -39,11 +42,11 @@ gcloud builds submit --tag gcr.io/gcp-de-batch-sim-464816-476514/employee_rts_pi
 
 --Step 2 To create flex template its a json
 --for department
-gcloud dataflow flex-template build gs://us-central1-gcp-de-batch-si-4fe23add-bucket/templates/department_pipeline_flex.json --image gcr.io/gcp-de-batch-sim-464816-476514/department_pipeline --sdk-language "PYTHON" --metadata-file metadata_department.json
+gcloud dataflow flex-template build gs://us-central1-gcp-de-batch-si-0eb7bd87-bucket/templates/department_pipeline_flex.json --image gcr.io/gcp-de-batch-sim-5/department_pipeline --sdk-language "PYTHON" --metadata-file metadata_department.json
 
-gcloud dataflow flex-template build gs://us-central1-gcp-de-batch-si-4fe23add-bucket/templates/department_pipeline_rts_flex.json --image gcr.io/gcp-de-batch-sim-464816-476514/department_pipeline_rts --sdk-language "PYTHON" --metadata-file metadata_department.json
+gcloud dataflow flex-template build gs://us-central1-gcp-de-batch-si-0eb7bd87-bucket/templates/department_pipeline_rts_flex.json --image gcr.io/gcp-de-batch-sim-5/department_pipeline_rts --sdk-language "PYTHON" --metadata-file metadata_department.json
 
 --for employee
-gcloud dataflow flex-template build gs://us-central1-gcp-de-batch-si-4fe23add-bucket/templates/employee_pipeline_flex.json --image gcr.io/gcp-de-batch-sim-464816-476514/employee_pipeline --sdk-language "PYTHON" --metadata-file metadata_employee.json
+gcloud dataflow flex-template build gs://us-central1-gcp-de-batch-si-0eb7bd87-bucket/templates/employee_pipeline_flex.json --image gcr.io/gcp-de-batch-sim-5/employee_pipeline --sdk-language "PYTHON" --metadata-file metadata_employee.json
 
-gcloud dataflow flex-template build gs://us-central1-gcp-de-batch-si-4fe23add-bucket/templates/employee_pipeline_rts_flex.json --image gcr.io/gcp-de-batch-sim-464816-476514/employee_pipeline_rts --sdk-language "PYTHON" --metadata-file metadata_employee.json
+gcloud dataflow flex-template build gs://us-central1-gcp-de-batch-si-0eb7bd87-bucket/templates/employee_pipeline_rts_flex.json --image gcr.io/gcp-de-batch-sim-5/employee_pipeline_rts --sdk-language "PYTHON" --metadata-file metadata_employee.json
